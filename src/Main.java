@@ -1,7 +1,7 @@
-
-
-
+package src;
 import javax.swing.*;
+
+
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -78,7 +78,7 @@ public class Main {
         // Solve Word Ladder problem
         try {
             long startTime = System.currentTimeMillis(); // Start time
-            WordLadderSolver solver = new WordLadderSolver(DictionaryLoader.loadDictionary("test\\words_alpha.txt"));
+            WordLadderSolver solver = new WordLadderSolver(DictionaryLoader.loadDictionary("C:\\Users\\jonat\\OneDrive\\Documents\\KodingSantuy\\STIMA\\Tucil3_13522121\\test\\words_alpha.txt"));
             List<String> path = solver.findPath(startWord, endWord, algorithm);
             long endTime = System.currentTimeMillis(); // End time
 
