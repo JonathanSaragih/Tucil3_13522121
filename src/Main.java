@@ -102,3 +102,6 @@ public class Main {
         return word.matches("[a-z]+"); // Check if the word contains only alphabetical characters
     }
 }
+
+//javac src/Main.java src/WordLadderSolver.java src/DictionaryLoader.java
+//java src.Main

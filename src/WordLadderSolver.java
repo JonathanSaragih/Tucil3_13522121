@@ -18,7 +18,7 @@ public class WordLadderSolver {
             case "astar":
                 return aStar(start, end);
             default:
-                return new ArrayList<>(); // Jika algoritma tidak dikenali, kembalikan list kosong.
+                return new ArrayList<>(); 
         }
     }
 
@@ -55,7 +55,7 @@ public class WordLadderSolver {
             }
         }
 
-        return new ArrayList<>(); // Jika tidak ada jalur yang ditemukan
+        return new ArrayList<>(); 
     }
 
     private List<String> greedyBestFirstSearch(String start, String end) {
@@ -81,11 +81,12 @@ public class WordLadderSolver {
             }
         }
 
-        return new ArrayList<>(); // Jika tidak ada jalur yang ditemukan
+        return new ArrayList<>(); 
     }
 
     private List<String> aStar(String start, String end) {
-        PriorityQueue<Node> openSet = new PriorityQueue<>(Comparator.comparingInt(n -> n.cost + heuristic(n.word, end)));
+        PriorityQueue<Node> openSet = new PriorityQueue<>(
+                Comparator.comparingInt(n -> n.cost + heuristic(n.word, end)));
         Map<String, Node> allNodes = new HashMap<>();
         Node startNode = new Node(start, null, 0);
         openSet.add(startNode);
@@ -117,7 +118,7 @@ public class WordLadderSolver {
             }
         }
 
-        return new ArrayList<>(); // Jika tidak ada jalur yang ditemukan
+        return new ArrayList<>();
     }
 
     private List<String> getNeighbors(String word) {
@@ -126,7 +127,8 @@ public class WordLadderSolver {
         for (int i = 0; i < word.length(); i++) {
             char oldChar = chars[i];
             for (char c = 'a'; c <= 'z'; c++) {
-                if (c == oldChar) continue;
+                if (c == oldChar)
+                    continue;
                 chars[i] = c;
                 String newWord = new String(chars);
                 if (dictionary.contains(newWord)) {
@@ -141,7 +143,8 @@ public class WordLadderSolver {
     private int heuristic(String word, String end) {
         int mismatchCount = 0;
         for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) != end.charAt(i)) mismatchCount++;
+            if (word.charAt(i) != end.charAt(i))
+                mismatchCount++;
         }
         return mismatchCount;
     }
@@ -158,8 +161,7 @@ public class WordLadderSolver {
     static class Node {
         String word;
         Node parent;
-        int cost; // Biaya dari awal hingga node ini, untuk UCS dan A* (g)
-
+        int cost; 
         Node(String word, Node parent, int cost) {
             this.word = word;
             this.parent = parent;
