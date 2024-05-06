@@ -78,12 +78,11 @@ public class Main {
             long endTime = System.currentTimeMillis();
 
             if (path.isEmpty()) {
-                resultArea.append("\nNo path found.");
+                resultArea.setText("No path found.");
             } else {
-                resultArea.append("\nPath found: " + String.join(" -> ", path) + "\n");
-                resultArea.append("Nodes visited: " + solver.getNodesVisited() + "\n");
+                resultArea.setText("Path found: " + String.join(" -> ", path) + "\n");
             }
-
+            resultArea.append("Nodes visited: " + solver.getNodesVisited() + "\n");
             resultArea.append("Time taken: " + (endTime - startTime) + " ms\n");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Failed to load dictionary: " + ex.getMessage(), "Error",
@@ -95,6 +94,3 @@ public class Main {
         return word.matches("[a-z]+");
     }
 }
-
-// javac src/Main.java src/WordLadderSolver.java src/DictionaryLoader.java
-// java src.Main

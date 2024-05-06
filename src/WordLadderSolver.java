@@ -11,7 +11,7 @@ public class WordLadderSolver {
     }
 
     public List<String> findPath(String start, String end, String algorithm) {
-        nodesVisited = 0;
+        nodesVisited = 0; // Reset the visited nodes counter at the start of each path find
         switch (algorithm.toLowerCase()) {
             case "ucs":
                 return uniformCostSearch(start, end);
@@ -33,7 +33,7 @@ public class WordLadderSolver {
 
         while (!openSet.isEmpty()) {
             Node current = openSet.poll();
-            nodesVisited++;
+            nodesVisited++; // Count each node when it is expanded
 
             if (current.word.equals(end)) {
                 return reconstructPath(current);
@@ -70,7 +70,7 @@ public class WordLadderSolver {
 
         while (!openSet.isEmpty()) {
             Node current = openSet.poll();
-            nodesVisited++;
+            nodesVisited++; // Count each node when it is expanded
 
             if (current.word.equals(end)) {
                 return reconstructPath(current);
@@ -98,7 +98,7 @@ public class WordLadderSolver {
 
         while (!openSet.isEmpty()) {
             Node current = openSet.poll();
-            nodesVisited++;
+            nodesVisited++; // Count each node when it is expanded
 
             if (current.word.equals(end)) {
                 return reconstructPath(current);
