@@ -4,12 +4,14 @@ import java.util.*;
 
 public class WordLadderSolver {
     private Set<String> dictionary;
+    private int nodesVisited;
 
     public WordLadderSolver(Set<String> dictionary) {
         this.dictionary = dictionary;
     }
 
     public List<String> findPath(String start, String end, String algorithm) {
+        nodesVisited = 0;
         switch (algorithm.toLowerCase()) {
             case "ucs":
                 return uniformCostSearch(start, end);
@@ -18,7 +20,7 @@ public class WordLadderSolver {
             case "astar":
                 return aStar(start, end);
             default:
-                return new ArrayList<>(); 
+                return new ArrayList<>();
         }
     }
 
@@ -31,6 +33,7 @@ public class WordLadderSolver {
 
         while (!openSet.isEmpty()) {
             Node current = openSet.poll();
+            nodesVisited++;
 
             if (current.word.equals(end)) {
                 return reconstructPath(current);
@@ -55,7 +58,7 @@ public class WordLadderSolver {
             }
         }
 
-        return new ArrayList<>(); 
+        return new ArrayList<>();
     }
 
     private List<String> greedyBestFirstSearch(String start, String end) {
@@ -67,6 +70,7 @@ public class WordLadderSolver {
 
         while (!openSet.isEmpty()) {
             Node current = openSet.poll();
+            nodesVisited++;
 
             if (current.word.equals(end)) {
                 return reconstructPath(current);
@@ -81,7 +85,7 @@ public class WordLadderSolver {
             }
         }
 
-        return new ArrayList<>(); 
+        return new ArrayList<>();
     }
 
     private List<String> aStar(String start, String end) {
@@ -94,6 +98,7 @@ public class WordLadderSolver {
 
         while (!openSet.isEmpty()) {
             Node current = openSet.poll();
+            nodesVisited++;
 
             if (current.word.equals(end)) {
                 return reconstructPath(current);
@@ -158,10 +163,15 @@ public class WordLadderSolver {
         return path;
     }
 
+    public int getNodesVisited() {
+        return nodesVisited;
+    }
+
     static class Node {
         String word;
         Node parent;
-        int cost; 
+        int cost;
+
         Node(String word, Node parent, int cost) {
             this.word = word;
             this.parent = parent;
