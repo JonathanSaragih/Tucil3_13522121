@@ -77,7 +77,7 @@ public class Main {
         // Solve Word Ladder problem
         try {
             long startTime = System.currentTimeMillis(); // Start time
-            WordLadderSolver solver = new WordLadderSolver(DictionaryLoader.loadDictionary("test\\words.txt"));
+            WordLadderSolver solver = new WordLadderSolver(DictionaryLoader.loadDictionary("src\\words.txt"));
             List<String> path = solver.findPath(startWord, endWord, algorithm);
             long endTime = System.currentTimeMillis(); // End time
 
