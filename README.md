@@ -54,7 +54,7 @@ $ java src.Main
 ```
 .
  ┣ doc
- ┃ ┗ Tucil 3_K3_13522121.pdf
+ ┃ ┗ Tucil3_13522121.pdf
  ┣ src
  ┃ ┣ DictionaryLoader.java
  ┃ ┣ Main.java
