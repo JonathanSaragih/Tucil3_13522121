@@ -9,13 +9,10 @@
 * [Screenshots](#screenshots)
 * [Program Structure](programstructure)
 * [Authors](#authors)
-<!-- * [License](#license) -->
 
 
 ## General Information
 This project is a made with Java program designed to find the shortest transformation sequence from one word to another by changing a single letter at a time, with each transformed word needing to be a valid word within a given dictionary. This project implements three distinct algorithms to tackle the Word Ladder problem: Uniform Cost Search (UCS), Greedy Best First Search, and A* Search, allowing for a comparison of their effectiveness and efficiency in various scenarios.
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
-
 
 ## Technologies Used
 - openjdk 17.0.8.1
@@ -48,7 +45,6 @@ $ java src.Main
 
 ## Screenshots
 <img src="test/image.png">
-<!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Program Structure
 ```
@@ -71,10 +67,3 @@ $ java src.Main
 * Created by [@JonathanSaragih](https://www.linkedin.com/in/jonathan-emmanuel-saragih-273596286/) - feel free to contact me!
 * Class : K03
 * NIM : 13522121
-
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
