@@ -1,5 +1,4 @@
 # Tugas Kecil 3 Strategi Algoritma
-> Membuat program untuk permainan Word Ladder dengan menggunakan algoritma UCS, Greedy Best First Search, dan A*
 
 ## Table of Contents
 * [General Information](#general-information)
