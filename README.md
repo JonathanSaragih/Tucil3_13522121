@@ -47,7 +47,7 @@ $ java src.Main
 ```
 
 ## Screenshots
-![screenshot](test\image.png)
+<img src="test/image.png">
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Program Structure
