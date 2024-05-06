@@ -1,4 +1,5 @@
 package src;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -33,7 +34,7 @@ public class Main {
         inputPanel.add(endWordField);
 
         inputPanel.add(new JLabel("Algorithm:"));
-        String[] algorithms = { "UCS", "Greedy", "AStar" };
+        String[] algorithms = { "UCS", "Greedy Best First Search", "AStar" };
         algorithmComboBox = new JComboBox<>(algorithms);
         inputPanel.add(algorithmComboBox);
 
@@ -76,7 +77,7 @@ public class Main {
         // Solve Word Ladder problem
         try {
             long startTime = System.currentTimeMillis(); // Start time
-            WordLadderSolver solver = new WordLadderSolver(DictionaryLoader.loadDictionary("test\\words_alpha.txt"));
+            WordLadderSolver solver = new WordLadderSolver(DictionaryLoader.loadDictionary("test\\words.txt"));
             List<String> path = solver.findPath(startWord, endWord, algorithm);
             long endTime = System.currentTimeMillis(); // End time
 
@@ -101,5 +102,5 @@ public class Main {
     }
 }
 
-//javac src/Main.java src/WordLadderSolver.java src/DictionaryLoader.java
-//java src.Main
+// javac src/Main.java src/WordLadderSolver.java src/DictionaryLoader.java
+// java src.Main

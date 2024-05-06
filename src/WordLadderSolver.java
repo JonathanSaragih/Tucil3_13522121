@@ -13,7 +13,7 @@ public class WordLadderSolver {
         switch (algorithm.toLowerCase()) {
             case "ucs":
                 return uniformCostSearch(start, end);
-            case "greedy":
+            case "greedy best first search":
                 return greedyBestFirstSearch(start, end);
             case "astar":
                 return aStar(start, end);
